@@ -51,7 +51,7 @@ canvas {
   }
 
   .size-btn {
-    @apply w-10 h-10 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all
+    @apply w-full px-2 h-11 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all duration-700
   }
 
   .common-padding {
