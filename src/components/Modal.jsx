@@ -2,13 +2,13 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap";
 import ModelView from "../components/ModalView";
 import { useEffect, useRef, useState } from "react";
-import { yellowImg } from "../utils";
+import { yellowImg } from "../utils/index";
 
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
-// import { animateWithGsapTimeline } from "../utils/animations";
+import { animateWithGsapTimeline } from "../utils/animations";
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -32,21 +32,21 @@ const Model = () => {
 
   const tl = gsap.timeline();
 
-//   useEffect(() => {
-//     if(size === 'large') {
-//       animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
-//         transform: 'translateX(-100%)',
-//         duration: 2
-//       })
-//     }
+  useEffect(() => {
+    if(size === 'large') {
+      animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
+        transform: 'translateX(-100%)',
+        duration: 2
+      })
+    }
 
-//     if(size ==='small') {
-//       animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
-//         transform: 'translateX(0)',
-//         duration: 2
-//       })
-//     }
-//   }, [size])
+    if(size ==='small') {
+      animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
+        transform: 'translateX(0)',
+        duration: 2
+      })
+    }
+  }, [size])
 
   useGSAP(() => {
     gsap.to('#heading', { y: 0, opacity: 1 })
@@ -98,7 +98,7 @@ const Model = () => {
           </div>
 
           <div className="mx-auto w-full">
-            <p className="text-md font-light text-center mb-5">{model.title}</p>
+            <p className="text-sm font-light text-center mb-5">{model.title}</p>
 
             <div className="flex-center">
               <ul className="color-container">
