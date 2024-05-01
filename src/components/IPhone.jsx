@@ -195,4 +195,4 @@ import { useGLTF, useTexture } from '@react-three/drei'
 
 export default Model;
 
-useGLTF.preload('../../public/models/scene.glb')
+useGLTF.preload('../scene.glb')
