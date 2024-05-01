@@ -1,15 +1,19 @@
-import { appleImg, bagImg, searchImg } from '../utils';
-import { navLists } from '../constants';
+import { appleImg, bagImg, searchImg } from "../utils";
+import { navLists } from "../constants";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   return (
     <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
       <nav className="flex w-full screen-max-width">
-        <img src={appleImg} alt="Apple" width={15} height={18} />
+        <img src={appleImg} alt="Apple" width={15} height={18} className="mb-20"/>
 
         <div className="flex flex-1 justify-center max-sm:hidden">
           {navLists.map((nav) => (
-            <div key={nav} className="px-5 text-md cursor-pointer text-gray hover:text-white transition-all uppercase">
+            <div
+              key={nav}
+              className="px-5 text-md cursor-pointer text-gray hover:text-white transition-all uppercase"
+            >
               {nav}
             </div>
           ))}
@@ -19,9 +23,21 @@ const Navbar = () => {
           <img src={searchImg} alt="search" width={18} height={18} />
           <img src={bagImg} alt="bag" width={18} height={18} />
         </div>
+        <div>
+          <SignedOut>
+            <SignInButton className="ms-5 mb-12"/>
+          </SignedOut>
+          <SignedIn>
+            <div className="ms-5">
+            <UserButton />
+            </div>
+          </SignedIn>
+        </div>
+        
       </nav>
+      
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

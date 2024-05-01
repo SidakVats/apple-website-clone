@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.0.1",
+    "@clerk/themes": "^2.1.0",
     "@gsap/react": "^2.1.0",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",

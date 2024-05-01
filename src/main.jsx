@@ -4,6 +4,8 @@ import App from './App.jsx'
 import './index.css'
 //...
 import * as Sentry from "@sentry/react";
+import { ClerkProvider } from '@clerk/clerk-react'
+
 
 Sentry.init({
   dsn: "https://87851d3daef88a97024d26691150b156@o4507158593077248.ingest.de.sentry.io/4507158597795920",
@@ -24,10 +26,17 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 });
 
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+   <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <App /></ClerkProvider>
   </React.StrictMode>,
 )
