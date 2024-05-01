@@ -5,6 +5,8 @@ import Lights from './Lights';
 
 import IPhone from './IPhone';
 import { Suspense } from "react";
+import React from "react";
+
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
   return (

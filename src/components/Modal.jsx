@@ -3,6 +3,8 @@ import gsap from "gsap";
 import ModelView from "../components/ModalView";
 import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils/index";
+import React from "react";
+
 
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";

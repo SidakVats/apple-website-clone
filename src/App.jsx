@@ -4,7 +4,9 @@ import Highlights from "./components/Highlights"
 import Modal from "./components/Modal"
 import Navbar from "./components/Navbar"
 
-import * as Sentary from "@sentry/react"
+import React from "react"
+
+
 
 function App() {
   // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
@@ -20,4 +22,4 @@ function App() {
   )
 }
 
-export default Sentary.withProfiler(App);
+export default App;

@@ -1,6 +1,7 @@
 import { appleImg, bagImg, searchImg } from "../utils";
 import { navLists } from "../constants";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import React from "react";
 
 const Navbar = () => {
   return (
