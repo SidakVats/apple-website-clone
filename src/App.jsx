@@ -1,7 +1,7 @@
 import Features from "./components/Features"
 import Hero from "./components/Hero"
 import Highlights from "./components/Highlights"
-import Modal from "./components/Modal"
+// import Modal from "./components/Modal"
 import Navbar from "./components/Navbar"
 
 import React from "react"
@@ -16,7 +16,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Highlights/>
-      <Modal/>
+      {/* <Modal/> */}
       <Features/>
     </>
   )
